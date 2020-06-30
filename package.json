@@ -1,0 +1,16 @@
+{
+  "name": "zenith",
+  "repository": "https://github.com/sneyed/zenith.git",
+  "author": "sneyed <sneyed@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
