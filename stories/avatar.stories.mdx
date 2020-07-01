@@ -1,0 +1,25 @@
+import Avatar from "../components/avatar";
+import Dropdown from "../components/dropdown";
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+<Meta title="Components/Avatar" component={Avatar} />
+
+# Avatar
+
+Description
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+  </Story>
+</Preview>
+
+## With Dropdown
+
+<Preview>
+  <Story name="With Dropdown">
+    <Dropdown button={<Avatar />} />
+  </Story>
+</Preview>
