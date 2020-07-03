@@ -1,57 +1,62 @@
 import React, { useState } from "react";
+import DropdownItem from "../dropdownItem";
+import { warn } from "../log";
+import { styled } from "linaria/react";
 
-export default ({ button }) => {
-  const containerStyle = {
-    position: "absolute",
-    right: 0,
-    marginTop: 8,
-    width: 48,
-  };
-  const buttonStyle = {};
+export default ({ button, children, align = "left", items }) => {
+  if (items && children)
+    warn({
+      component: "Dropdown",
+      message: 'Children will be ignored because "items" parameter is supplied',
+    });
   const [expanded, setExpanded] = useState(false);
+
+  const Dropdown = styled.div`
+    position: relative;
+    display: inline-block;
+  `;
+
+  const DropdownButton = styled.button`
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+  `;
+
+  const DropdownItems = styled.div`
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 4px;
+    width: 200px;
+    position: absolute;
+    right: ${(props, test) => {
+      console.log(props, test);
+      return props.align ? "0" : "200px";
+    }};
+  `;
 
   return (
     <>
-      <button
-        style={buttonStyle}
-        aria-expanded={expanded}
-        onClick={() => {
-          setExpanded(!expanded);
-        }}
-      >
-        {button}
-      </button>
-
-      <div style={containerStyle}>
-        <div
-          class="py-1 rounded-md bg-white shadow-xs"
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="user-menu"
+      <Dropdown aria-expanded={expanded}>
+        <DropdownButton
+          onClick={() => {
+            setExpanded(!expanded);
+          }}
         >
-          <a
-            href="#"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            role="menuitem"
-          >
-            Your Profile
-          </a>
-          <a
-            href="#"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            role="menuitem"
-          >
-            Settings
-          </a>
-          <a
-            href="#"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            role="menuitem"
-          >
-            Sign out
-          </a>
-        </div>
-      </div>
+          {button}
+        </DropdownButton>
+        {expanded && (
+          <DropdownItems>
+            {items
+              ? items.map((item, index) => (
+                  <DropdownItem key={index} text={item.text} />
+                ))
+              : children}
+          </DropdownItems>
+        )}
+      </Dropdown>
     </>
   );
 };
