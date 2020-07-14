@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ text, children }) => {
+export default ({ text, url, children }) => {
   if (text && children)
     warn({
       component: "DropdownItem",
@@ -9,7 +9,13 @@ export default ({ text, children }) => {
 
   return (
     <>
-      <div className="dropdownItem">{text || children}</div>
+      {url ? (
+        <a href={url} className="dropdownItem">
+          {text || children}
+        </a>
+      ) : (
+        <div className="dropdownItem">{text || children}</div>
+      )}
       <style jsx>{`
         .dropdownItem {
           display: block;
@@ -22,6 +28,10 @@ export default ({ text, children }) => {
             Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
             Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
           cursor: pointer;
+        }
+        a.dropdownItem {
+          text-decoration: none;
+          color: black;
         }
         .dropdownItem:hover {
           background: #f4f5f7;
