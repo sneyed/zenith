@@ -1,17 +1,17 @@
 import React from "react";
 
-export default ({ text, url, children }) => {
-  if (text && children)
+export default ({ label, url, children }) => {
+  if (label && children)
     warn({
       component: "DropdownItem",
-      message: 'Children will be ignored because "text" parameter is supplied',
+      message: 'Children will be ignored because "label" parameter is supplied',
     });
 
   return (
     <>
       {url ? (
         <a href={url} className="dropdownItem">
-          {text || children}
+          {label || children}
         </a>
       ) : (
         <div className="dropdownItem">{text || children}</div>

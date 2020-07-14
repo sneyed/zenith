@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import Button from "../button";
 import DropdownItem from "../dropdownItem";
 import { warn } from "../log";
 
-export default ({ button, children, align = "left", items, color = "red" }) => {
+export default ({
+  label = "Dropdown",
+  button,
+  children,
+  align = "left",
+  items,
+}) => {
   if (items && children)
     warn({
       component: "Dropdown",
@@ -19,7 +26,7 @@ export default ({ button, children, align = "left", items, color = "red" }) => {
             setExpanded(!expanded);
           }}
         >
-          {button}
+          {button || <Button label={label} />}
         </div>
         {expanded && (
           <div className="items">

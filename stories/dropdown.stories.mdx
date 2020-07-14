@@ -1,0 +1,61 @@
+import Avatar from "../components/avatar";
+import Dropdown from "../components/dropdown";
+import DropdownItem from "../components/dropdownItem";
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+<Meta title="Components/Dropdown" component={Dropdown} />
+
+# Dropdown
+
+Description
+
+##### Default
+
+<Preview>
+  <Story name="Default">
+    <div style={{ paddingBottom: 84 }}>
+      <Dropdown
+          items={[
+            { label: "Profile", url: "#profile" },
+            { label: "Settings", url: "#settings" },
+            { label: "Sign out", url: "#signout" },
+          ]}
+        />
+    </div>
+  </Story>
+</Preview>
+
+##### Avatar as button
+
+<Preview>
+  <Story name="Avatar Button">
+    <div style={{ paddingBottom: 84 }}>
+      <Dropdown
+        button={
+          <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+        }
+        items={[
+          { label: "Profile", url: "#profile" },
+          { label: "Settings", url: "#settings" },
+          { label: "Sign out" },
+        ]}
+      />
+    </div>
+  </Story>
+</Preview>
+
+##### With custom children
+
+<Preview>
+  <Story name="Custom Children">
+    <div style={{ paddingBottom: 96 }}>
+      <Dropdown
+        items={[
+          { children: <div>Profile</div> },
+          { children: <span>Settings</span> },
+          { children: <p>Sign out</p> },
+        ]}
+      />
+    </div>
+  </Story>
+</Preview>

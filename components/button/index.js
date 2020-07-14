@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ url, text }) => {
+export default ({ url, label = "Button" }) => {
   const style = {
     paddingRight: 16,
     paddingLeft: 16,
@@ -8,9 +8,7 @@ export default ({ url, text }) => {
     paddingBottom: 8,
   };
 
-  return (
-    <a href="#" style={style}>
-      {text}
-    </a>
-  );
+  const buttonElement = <button style={style}>{label}</button>;
+
+  return url ? <a href={url}>{buttonElement}</a> : buttonElement;
 };

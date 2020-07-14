@@ -13,7 +13,10 @@ export default ({
     height: size,
     userSelect: "none",
   };
-  return (
+
+  const imgElement = (
     <img style={style} src={src} alt={name} role={name ? "img" : "none"} />
   );
+
+  return url ? <a href={url}>{imgElement}</a> : imgElement;
 };

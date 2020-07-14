@@ -7,7 +7,8 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
 # Avatar
 
-Description
+Circular image that represents a user  
+Commonly used on the right side of header navigation leading to account or profile settings
 
 ##### Default
 
@@ -17,67 +18,45 @@ Description
   </Story>
 </Preview>
 
-##### Any size
+##### Change size
 
 <Preview>
   <Story name="Sizes">
-    <div style={{ display: "flex", width: "100%" }}>
-    <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={6} />
-    <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={12} />
-    <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={32} />
-    <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={64} />
+    <div style={{ display: "flex", width: "100%", justifyContent: "space-between" }}>
+      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={18} />
+      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={32} />
+      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={48} />
+      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={64} />
+      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={82} />
+      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={96} />
     </div>
   </Story>
 </Preview>
 
-##### With a dropdown
+##### With link
 
 <Preview>
-  <Story name="With Dropdown">
-    <Dropdown
-      button={
-        <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
-      }
-      items={[
-        { text: "Profile", url: "#profile" },
-        { text: "Settings", url: "#settings" },
-        { text: "Sign out" },
-      ]}
-    />
+  <Story name="With Link">
+    <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" url="#account" />
   </Story>
 </Preview>
 
-##### Right aligned dropdown
+##### With right aligned dropdown
 
 <Preview>
   <Story name="Right Aligned Dropdown">
-    <Dropdown
-      align="right"
-      button={
-        <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
-      }
-      items={[
-        { text: "Profile", url: "#profile" },
-        { text: "Settings", url: "#settings" },
-        { text: "Sign out" },
-      ]}
-    />
-  </Story>
-</Preview>
-
-##### With custom children
-
-<Preview>
-  <Story name="Custom Children">
-    <Dropdown
-      button={
-        <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
-      }
-      items={[
-        { children: <div>Breathing gearbox</div> },
-        { children: <span>Breathing bolthead</span> },
-        { children: <p>Breathing ship</p> },
-      ]}
-    />
+    <div style={{ paddingBottom: 84 }}>
+      <Dropdown
+        align="right"
+        button={
+          <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+        }
+        items={[
+          { text: "Profile", url: "#profile" },
+          { text: "Settings", url: "#settings" },
+          { text: "Sign out" },
+        ]}
+      />
+    </div>
   </Story>
 </Preview>
