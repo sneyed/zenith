@@ -14,7 +14,7 @@ export default ({ label, url, children }) => {
           {label || children}
         </a>
       ) : (
-        <div className="dropdownItem">{text || children}</div>
+        <div className="dropdownItem">{label || children}</div>
       )}
       <style jsx>{`
         .dropdownItem {

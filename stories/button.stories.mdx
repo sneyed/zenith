@@ -1,0 +1,21 @@
+import Button from "../components/button";
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+<Meta title="Components/Button" component={Button} />
+
+# Button
+
+Description
+
+##### Default
+
+<Preview>
+  <Story name="Default">
+    <Button />
+  </Story>
+</Preview>
+
+| Property | Type   | Required | Description                    | Default     |
+| -------- | ------ | -------- | ------------------------------ | ----------- |
+| label    | string | no       | Text to display on button face | "Button"    |
+| url      | string | no       | Link to navigate to on click   | `undefined` |

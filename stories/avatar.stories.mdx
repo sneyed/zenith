@@ -7,21 +7,29 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
 # Avatar
 
-Circular image that represents a user  
-Commonly used on the right side of header navigation leading to account or profile settings
-
-##### Default
-
 <Preview>
   <Story name="Default">
-    <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+    <Avatar name="Loki McKay" />
   </Story>
 </Preview>
 
-##### Change size
+Circular image that represents a user  
+Commonly used on the right side of header navigation leading to account or profile settings
+
+| Property   | Type                 | Required | Description                              | Default                           |
+| ---------- | -------------------- | -------- | ---------------------------------------- | --------------------------------- |
+| name       | string               | yes      | Name of avatar. Used for image `alt` tag | `undefined`                       |
+| src        | string               | no      | Image source                             | "https://i.imgur.com/niM85vH.png" |
+| url        | string               | no       | Url to link to when avatar is clicked    | `undefined`                       |
+| size       | integer              | no       | Size of avatar in pixels                 | 64                                |
+| appearance | ["circle", "square"] | no       | Circular or square appearance            | "circle"                          |
+
+## Examples
+
+### Size
 
 <Preview>
-  <Story name="Sizes">
+  <Story name="Size">
     <div style={{ display: "flex", width: "100%", justifyContent: "space-between" }}>
       <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={18} />
       <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={32} />
@@ -33,7 +41,18 @@ Commonly used on the right side of header navigation leading to account or profi
   </Story>
 </Preview>
 
-##### With link
+### Appearance
+
+<Preview>
+  <Story name="Appearance">
+    <div style={{ display: "flex", width: "100%", justifyContent: "space-around" }}>
+      <Avatar appearance="circle" name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+      <Avatar appearance="square" name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+    </div>
+  </Story>
+</Preview>
+
+### With link
 
 <Preview>
   <Story name="With Link">
@@ -41,7 +60,7 @@ Commonly used on the right side of header navigation leading to account or profi
   </Story>
 </Preview>
 
-##### With right aligned dropdown
+### With right aligned dropdown
 
 <Preview>
   <Story name="Right Aligned Dropdown">
@@ -52,9 +71,9 @@ Commonly used on the right side of header navigation leading to account or profi
           <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
         }
         items={[
-          { text: "Profile", url: "#profile" },
-          { text: "Settings", url: "#settings" },
-          { text: "Sign out" },
+          { label: "Profile", url: "#profile" },
+          { label: "Settings", url: "#settings" },
+          { label: "Sign out" },
         ]}
       />
     </div>
