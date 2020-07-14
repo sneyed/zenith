@@ -16,13 +16,13 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 Circular image that represents a user  
 Commonly used on the right side of header navigation leading to account or profile settings
 
-| Property   | Type                 | Required | Description                              | Default                           |
-| ---------- | -------------------- | -------- | ---------------------------------------- | --------------------------------- |
-| name       | string               | yes      | Name of avatar. Used for image `alt` tag | `undefined`                       |
-| src        | string               | no      | Image source                             | "https://i.imgur.com/niM85vH.png" |
-| url        | string               | no       | Url to link to when avatar is clicked    | `undefined`                       |
-| size       | integer              | no       | Size of avatar in pixels                 | 64                                |
-| appearance | ["circle", "square"] | no       | Circular or square appearance            | "circle"                          |
+| Property | Type                 | Required | Description                              | Default                           |
+| -------- | -------------------- | -------- | ---------------------------------------- | --------------------------------- |
+| name     | string               | yes      | Name of avatar. Used for image `alt` tag | `undefined`                       |
+| src      | string               | no       | Image source                             | "https://i.imgur.com/niM85vH.png" |
+| url      | string               | no       | Url to link to when avatar is clicked    | `undefined`                       |
+| size     | integer              | no       | Size of avatar in pixels                 | 64                                |
+| shape    | ["circle", "square"] | no       | Circular or square shape                 | "circle"                          |
 
 ## Examples
 
@@ -41,13 +41,13 @@ Commonly used on the right side of header navigation leading to account or profi
   </Story>
 </Preview>
 
-### Appearance
+### Shape
 
 <Preview>
-  <Story name="Appearance">
+  <Story name="Shape">
     <div style={{ display: "flex", width: "100%", justifyContent: "space-around" }}>
-      <Avatar appearance="circle" name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
-      <Avatar appearance="square" name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+      <Avatar shape="circle" name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+      <Avatar shape="square" name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
     </div>
   </Story>
 </Preview>

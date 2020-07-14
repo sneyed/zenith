@@ -1,4 +1,5 @@
 import React from "react";
+import { warn } from "../log";
 
 export default ({ label, url, children }) => {
   if (label && children)
@@ -10,11 +11,13 @@ export default ({ label, url, children }) => {
   return (
     <>
       {url ? (
-        <a href={url} className="dropdownItem">
-          {label || children}
+        <a href={url} className="dropdownItem" role="menuitem">
+          {label || children || "Item"}
         </a>
       ) : (
-        <div className="dropdownItem">{label || children}</div>
+        <div className="dropdownItem" role="menuitem">
+          {label || children || "Item"}
+        </div>
       )}
       <style jsx>{`
         .dropdownItem {
@@ -28,6 +31,7 @@ export default ({ label, url, children }) => {
             Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
             Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
           cursor: pointer;
+          user-select: none;
         }
         a.dropdownItem {
           text-decoration: none;

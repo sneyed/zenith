@@ -5,10 +5,10 @@ export default ({
   url,
   src = "https://i.imgur.com/niM85vH.png",
   size = 64,
-  appearance = "circle",
+  shape = "circle",
 }) => {
   const style = {
-    borderRadius: appearance === "circle" ? "50%" : 0,
+    borderRadius: shape === "circle" ? "50%" : 0,
     width: size,
     height: size,
     userSelect: "none",

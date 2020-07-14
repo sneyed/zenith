@@ -15,19 +15,39 @@ export default ({
       component: "Dropdown",
       message: 'Children will be ignored because "items" parameter is supplied',
     });
+
   const [expanded, setExpanded] = useState(false);
+  const [blurTimeout, setBlurTimeout] = useState(null);
+  const onClick = () => {
+    setExpanded(!expanded);
+  };
+  const onBlur = () => {
+    setBlurTimeout(
+      setTimeout(() => {
+        setExpanded(false);
+      })
+    );
+  };
+  const onFocus = () => {
+    clearTimeout(blurTimeout);
+  };
 
   return (
     <>
-      <div aria-expanded={expanded} className="container">
-        <div
-          className="button"
-          onClick={() => {
-            setExpanded(!expanded);
-          }}
-        >
-          {button || <Button label={label} />}
-        </div>
+      <div
+        aria-expanded={expanded}
+        className="container"
+        onBlur={onBlur}
+        onFocus={onFocus}
+      >
+        {button ? (
+          <button className="button" onClick={onClick}>
+            {button}
+          </button>
+        ) : (
+          <Button label={label} onClick={onClick} />
+        )}
+
         {expanded && (
           <div className="items">
             {items

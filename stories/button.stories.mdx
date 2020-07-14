@@ -5,17 +5,36 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
 # Button
 
-Description
-
-##### Default
-
 <Preview>
   <Story name="Default">
     <Button />
   </Story>
 </Preview>
 
+Click it and stuff happens
+
 | Property | Type   | Required | Description                    | Default     |
 | -------- | ------ | -------- | ------------------------------ | ----------- |
 | label    | string | no       | Text to display on button face | "Button"    |
 | url      | string | no       | Link to navigate to on click   | `undefined` |
+
+## Examples
+
+### Styles
+
+#### Hero
+
+<Story name="Hero">
+  <div>
+    <Button style="hero" label="Hero" />
+  </div>
+</Story>
+
+#### Tab
+
+<Story name="Tab">
+  <div>
+    <Button style="tab" label="Tab" />
+    <Button style="tab" label="Selected" selected />
+  </div>
+</Story>

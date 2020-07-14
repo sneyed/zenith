@@ -7,25 +7,75 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
 # Dropdown
 
-Description
-
-##### Default
-
 <Preview>
   <Story name="Default">
     <div style={{ paddingBottom: 84 }}>
       <Dropdown
-          items={[
-            { label: "Profile", url: "#profile" },
-            { label: "Settings", url: "#settings" },
-            { label: "Sign out", url: "#signout" },
-          ]}
-        />
+        items={[
+          { label: "Profile", url: "#profile" },
+          { label: "Settings", url: "#settings" },
+          { label: "Sign out", url: "#signout" },
+        ]}
+      />
     </div>
   </Story>
 </Preview>
 
-##### Avatar as button
+Description
+
+| Property | Type             | Required | Description                                                           | Default                    |
+| -------- | ---------------- | -------- | --------------------------------------------------------------------- | -------------------------- |
+| label    | string           | no       | Text to display on button face                                        | "Dropdown"                 |
+| button   | jsx              | no       | Component(s) to display instead of button. Overrides `label` property | `<Button label={label} />` |
+| items    | `[DropdownItem]` | no       | Array of `DropdownItem` properties                                    | `undefined`                |
+| children | jsx              | no       | Component(s) to display instead of `items`                            | `undefined`                |
+
+# Dropdown Item
+
+<Preview>
+  <Story name="Dropdown Item">
+    <div>
+      <DropdownItem label="Profile" url="#profile" />
+    </div>
+  </Story>
+</Preview>
+
+Description
+
+| Property | Type   | Required | Description                                | Default     |
+| -------- | ------ | -------- | ------------------------------------------ | ----------- |
+| label    | string | no       | Text to display for item                   | "Item"      |
+| url      | string | no       | Url to navigate to when item is clicked    | `undefined` |
+| children | jsx    | no       | Component(s) to display instead of `label` | `undefined` |
+
+## Dropdown Examples
+
+### Align
+
+<Preview>
+  <Story name="Align">
+    <div style={{ display: "flex", justifyContent: "space-around", width: "100%", paddingBottom: 84 }}>
+      <Dropdown
+        align="left"
+        items={[
+          { label: "Profile", url: "#profile" },
+          { label: "Settings", url: "#settings" },
+          { label: "Sign out", url: "#signout" },
+        ]}
+      />
+      <Dropdown
+        align="right"
+        items={[
+          { label: "Profile", url: "#profile" },
+          { label: "Settings", url: "#settings" },
+          { label: "Sign out", url: "#signout" },
+        ]}
+      />
+    </div>
+  </Story>
+</Preview>
+
+### Avatar as button
 
 <Preview>
   <Story name="Avatar Button">
@@ -37,14 +87,14 @@ Description
         items={[
           { label: "Profile", url: "#profile" },
           { label: "Settings", url: "#settings" },
-          { label: "Sign out" },
+          { label: "Sign out", url: "#signout" },
         ]}
       />
     </div>
   </Story>
 </Preview>
 
-##### With custom children
+### With custom children
 
 <Preview>
   <Story name="Custom Children">
