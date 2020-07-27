@@ -7,14 +7,14 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
 # Avatar
 
+Circular image that represents a user  
+Commonly used on the right side of header navigation leading to account or profile settings
+
 <Preview>
   <Story name="Default">
     <Avatar name="Loki McKay" />
   </Story>
 </Preview>
-
-Circular image that represents a user  
-Commonly used on the right side of header navigation leading to account or profile settings
 
 | Property | Type                 | Required | Description                              | Default                           |
 | -------- | -------------------- | -------- | ---------------------------------------- | --------------------------------- |
@@ -30,13 +30,43 @@ Commonly used on the right side of header navigation leading to account or profi
 
 <Preview>
   <Story name="Size">
-    <div style={{ display: "flex", width: "100%", justifyContent: "space-between" }}>
-      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={18} />
-      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={32} />
-      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={48} />
-      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={64} />
-      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={82} />
-      <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" size={96} />
+    <div
+      style={{
+        display: "flex",
+        width: "100%",
+        justifyContent: "space-between",
+      }}
+    >
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={18}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={32}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={48}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={64}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={82}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={96}
+      />
     </div>
   </Story>
 </Preview>
@@ -45,9 +75,19 @@ Commonly used on the right side of header navigation leading to account or profi
 
 <Preview>
   <Story name="Shape">
-    <div style={{ display: "flex", width: "100%", justifyContent: "space-around" }}>
-      <Avatar shape="circle" name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
-      <Avatar shape="square" name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+    <div
+      style={{ display: "flex", width: "100%", justifyContent: "space-around" }}
+    >
+      <Avatar
+        shape="circle"
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+      />
+      <Avatar
+        shape="square"
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+      />
     </div>
   </Story>
 </Preview>
@@ -56,7 +96,11 @@ Commonly used on the right side of header navigation leading to account or profi
 
 <Preview>
   <Story name="With Link">
-    <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" url="#account" />
+    <Avatar
+      name="Loki McKay"
+      src="https://i.imgur.com/niM85vH.png"
+      url="#account"
+    />
   </Story>
 </Preview>
 

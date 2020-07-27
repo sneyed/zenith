@@ -7,6 +7,8 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
 # Dropdown
 
+Description
+
 <Preview>
   <Story name="Default">
     <div style={{ paddingBottom: 84 }}>
@@ -20,8 +22,6 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
     </div>
   </Story>
 </Preview>
-
-Description
 
 | Property | Type             | Required | Description                                                           | Default                    |
 | -------- | ---------------- | -------- | --------------------------------------------------------------------- | -------------------------- |
@@ -54,7 +54,14 @@ Description
 
 <Preview>
   <Story name="Align">
-    <div style={{ display: "flex", justifyContent: "space-around", width: "100%", paddingBottom: 84 }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-around",
+        width: "100%",
+        paddingBottom: 84,
+      }}
+    >
       <Dropdown
         align="left"
         items={[
