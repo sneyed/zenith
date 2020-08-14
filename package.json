@@ -3,10 +3,15 @@
   "repository": "https://github.com/sneyed/zenith.git",
   "author": "sneyed <sneyed@gmail.com>",
   "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "docs:dev": "next",
+    "docs:build": "next build",
+    "docs:start": "next start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "pretty": "prettier --write **/*.js"
@@ -28,6 +33,7 @@
     "@zeit/next-css": "^1.0.1",
     "babel-loader": "^8.1.0",
     "husky": "^4.2.5",
+    "microbundle": "^0.12.3",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1"
   },

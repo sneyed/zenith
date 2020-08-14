@@ -2,10 +2,6 @@
 
 Personal component library
 
-## References
-
-- https://docs.bit.dev/docs/tutorials/bit-react-tutorial#export-component
-
 ## Inspiration
 
 - [Polaris by Shopify](https://polaris.shopify.com/)
