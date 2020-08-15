@@ -2,15 +2,10 @@ import React, { useState } from "react";
 import Button from "../button";
 import DropdownItem from "./item";
 import { warn } from "../log";
+import { classNames } from "../util";
 import styles from "./styles.module.css";
 
-const Dropdown = ({
-  label = "Dropdown",
-  button,
-  children,
-  align = "left",
-  items,
-}) => {
+const Dropdown = ({ label = "Dropdown", button, children, align, items }) => {
   if (items && children)
     warn({
       component: "Dropdown",
@@ -49,7 +44,12 @@ const Dropdown = ({
       )}
 
       {expanded && (
-        <div className={styles.items}>
+        <div
+          className={classNames([
+            styles.items,
+            align && styles[`align-${align}`],
+          ])}
+        >
           {items
             ? items.map((itemProps, index) => (
                 <DropdownItem key={index} {...itemProps} />

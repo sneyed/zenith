@@ -13,13 +13,13 @@ const DropdownItem = ({ label, url, children }) => {
   return url ? (
     <a
       href={url}
-      className={classNames([styles.dropdownItem, styles.dropdownItemLink])}
+      className={classNames([styles.item, styles.itemLink])}
       role="menuitem"
     >
       {label || children || "Item"}
     </a>
   ) : (
-    <div className={styles.dropdownItem} role="menuitem">
+    <div className={styles.item} role="menuitem">
       {label || children || "Item"}
     </div>
   );
