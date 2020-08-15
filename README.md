@@ -19,3 +19,8 @@ Personal component library
 
 To publish again you only need to run step 1
 To remove the link run `yarn unlink` in zenith directory
+
+References
+
+- [yarn link](https://classic.yarnpkg.com/en/docs/cli/link)
+- [react hooks issue](https://github.com/facebook/react/issues/14257#issuecomment-595183610)

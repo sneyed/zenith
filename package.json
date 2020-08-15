@@ -20,6 +20,7 @@
     "build-storybook": "build-storybook",
     "pretty": "prettier --write **/*.js",
     "publish:local": "rm -rf ./dist && yarn run bundle && yarn pack",
+    "publish:link": "yarn link && cd ./node_modules/react && yarn link && cd ../../node_modules/react-dom && yarn link && cd ../../",
     "prepublish": "rm -rf ./dist && yarn run bundle"
   },
   "peerDependencies": {
