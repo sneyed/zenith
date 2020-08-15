@@ -1,7 +1,7 @@
 import React from "react";
 import { warn } from "../log";
 
-export default ({ label, url, children }) => {
+const DropdownItem = ({ label, url, children }) => {
   if (label && children)
     warn({
       component: "DropdownItem",
@@ -44,3 +44,5 @@ export default ({ label, url, children }) => {
     </>
   );
 };
+
+export default DropdownItem;

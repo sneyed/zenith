@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "../button";
-import DropdownItem from "../dropdownItem";
+import DropdownItem from "./item";
 import { warn } from "../log";
 
-export default ({
+const Dropdown = ({
   label = "Dropdown",
   button,
   children,
@@ -85,3 +85,5 @@ export default ({
     </>
   );
 };
+
+export default Dropdown;

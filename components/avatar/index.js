@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({
+const Avatar = ({
   name,
   url,
   src = "https://i.imgur.com/niM85vH.png",
@@ -20,3 +20,5 @@ export default ({
 
   return url ? <a href={url}>{imgElement}</a> : imgElement;
 };
+
+export default Avatar;

@@ -2,7 +2,8 @@ import Avatar from "../components/avatar";
 import Dropdown from "../components/dropdown";
 
 const Home = () => (
-  <div>
+  <div style={{ display: "flex" }}>
+    <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
     <Dropdown
       align="right"
       button={

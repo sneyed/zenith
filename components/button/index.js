@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({
+const Button = ({
   label = "Button",
   url,
   style = "hero",
@@ -67,3 +67,5 @@ export default ({
   );
   return url ? <a href={url}>{buttonElement}</a> : buttonElement;
 };
+
+export default Button;
