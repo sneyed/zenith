@@ -13,12 +13,10 @@ Personal component library
 
 ## Local development
 
-1. zenith: `yarn publish:local`
-1. zenith: `yarn link`
-1. other project: `yarn link "@sneyed/zenith"`
-
-To publish again you only need to run step 1
-To remove the link run `yarn unlink` in zenith directory
+1. /zenith: `yarn install`
+1. /zenith: `yarn bundlew`
+1. /zenith/demo: `yarn install`
+1. /zenith/demo: `yarn dev`
 
 References
 

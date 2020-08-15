@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 import { classNames } from "../util";
 
@@ -11,8 +11,6 @@ const Button = ({
   selected,
   style,
 }) => {
-  const [test, setTest] = useState("hi");
-  console.log(test);
   const buttonElement = (
     <button
       className={classNames([

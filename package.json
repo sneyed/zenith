@@ -35,11 +35,16 @@
     "husky": "^4.2.5",
     "microbundle": "^0.12.3",
     "prettier": "^2.0.5",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.10.4"
   }
 }
