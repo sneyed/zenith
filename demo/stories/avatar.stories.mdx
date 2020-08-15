@@ -1,0 +1,125 @@
+import Avatar from "../components/avatar";
+import Dropdown from "../components/dropdown";
+import DropdownItem from "../components/dropdownItem";
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+<Meta title="Components/Avatar" component={Avatar} />
+
+# Avatar
+
+Circular image that represents a user  
+Commonly used on the right side of header navigation leading to account or profile settings
+
+<Preview>
+  <Story name="Default">
+    <Avatar name="Loki McKay" />
+  </Story>
+</Preview>
+
+| Property | Type                 | Required | Description                              | Default                           |
+| -------- | -------------------- | -------- | ---------------------------------------- | --------------------------------- |
+| name     | string               | yes      | Name of avatar. Used for image `alt` tag | `undefined`                       |
+| src      | string               | no       | Image source                             | "https://i.imgur.com/niM85vH.png" |
+| url      | string               | no       | Url to link to when avatar is clicked    | `undefined`                       |
+| size     | integer              | no       | Size of avatar in pixels                 | 64                                |
+| shape    | ["circle", "square"] | no       | Circular or square shape                 | "circle"                          |
+
+## Examples
+
+### Size
+
+<Preview>
+  <Story name="Size">
+    <div
+      style={{
+        display: "flex",
+        width: "100%",
+        justifyContent: "space-between",
+      }}
+    >
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={18}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={32}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={48}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={64}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={82}
+      />
+      <Avatar
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+        size={96}
+      />
+    </div>
+  </Story>
+</Preview>
+
+### Shape
+
+<Preview>
+  <Story name="Shape">
+    <div
+      style={{ display: "flex", width: "100%", justifyContent: "space-around" }}
+    >
+      <Avatar
+        shape="circle"
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+      />
+      <Avatar
+        shape="square"
+        name="Loki McKay"
+        src="https://i.imgur.com/niM85vH.png"
+      />
+    </div>
+  </Story>
+</Preview>
+
+### With link
+
+<Preview>
+  <Story name="With Link">
+    <Avatar
+      name="Loki McKay"
+      src="https://i.imgur.com/niM85vH.png"
+      url="#account"
+    />
+  </Story>
+</Preview>
+
+### With right aligned dropdown
+
+<Preview>
+  <Story name="Right Aligned Dropdown">
+    <div style={{ paddingBottom: 84 }}>
+      <Dropdown
+        align="right"
+        button={
+          <Avatar name="Loki McKay" src="https://i.imgur.com/niM85vH.png" />
+        }
+        items={[
+          { label: "Profile", url: "#profile" },
+          { label: "Settings", url: "#settings" },
+          { label: "Sign out" },
+        ]}
+      />
+    </div>
+  </Story>
+</Preview>

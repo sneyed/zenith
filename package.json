@@ -1,47 +1,37 @@
 {
   "name": "@sneyed/zenith",
   "version": "0.0.1",
+  "author": "sneyed <sneyed@gmail.com>",
+  "license": "UNLICENSED",
+  "description": "Personal component library",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "index.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sneyed/zenith.git"
   },
-  "author": "sneyed <sneyed@gmail.com>",
-  "license": "UNLICENSED",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
-  "source": "index.js",
+  "bugs": {
+    "url": "https://github.com/sneyed/zenith/issues"
+  },
+  "homepage": "https://github.com/sneyed/zenith#readme",
+  "keywords": [
+    "react"
+  ],
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
     "bundle": "microbundle --no-compress --format modern,cjs --jsx React.createElement",
     "bundlew": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "pretty": "prettier --write **/*.js",
-    "publish:local": "rm -rf ./dist && yarn run bundle && yarn pack",
-    "publish:link": "yarn link && cd ./node_modules/react && yarn link && cd ../../node_modules/react-dom && yarn link && cd ../../",
     "prepublish": "rm -rf ./dist && yarn run bundle"
   },
   "peerDependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "styled-jsx": "^3.3.0"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "next": "^9.4.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "styled-jsx": "^3.3.0",
-    "@babel/core": "^7.10.4",
-    "@storybook/addon-a11y": "^5.3.19",
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-docs": "^5.3.19",
-    "@storybook/addon-links": "^5.3.19",
-    "@storybook/addons": "^5.3.19",
-    "@storybook/react": "^5.3.19",
-    "@zeit/next-css": "^1.0.1",
-    "babel-loader": "^8.1.0",
     "husky": "^4.2.5",
     "microbundle": "^0.12.3",
     "prettier": "^2.0.5",
@@ -51,16 +41,5 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "description": "Personal component library",
-  "bugs": {
-    "url": "https://github.com/sneyed/zenith/issues"
-  },
-  "homepage": "https://github.com/sneyed/zenith#readme",
-  "keywords": [
-    "react"
-  ]
+  }
 }
