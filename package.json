@@ -1,28 +1,37 @@
 {
-  "name": "zenith",
-  "repository": "https://github.com/sneyed/zenith.git",
+  "name": "@sneyed/zenith",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sneyed/zenith.git"
+  },
   "author": "sneyed <sneyed@gmail.com>",
-  "private": true,
+  "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "index.js",
   "scripts": {
-    "build": "microbundle",
-    "dev": "microbundle watch",
-    "docs:dev": "next",
-    "docs:build": "next build",
-    "docs:start": "next start",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "bundle": "microbundle --no-compress --format modern,cjs --jsx React.createElement",
+    "bundlew": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pretty": "prettier --write **/*.js"
+    "pretty": "prettier --write **/*.js",
+    "publish:local": "rm -rf ./dist && yarn run bundle && yarn pack",
+    "prepublish": "rm -rf ./dist && yarn run bundle"
   },
-  "dependencies": {
-    "next": "^9.4.4",
+  "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-jsx": "^3.3.0"
   },
   "devDependencies": {
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-jsx": "^3.3.0",
     "@babel/core": "^7.10.4",
     "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addon-actions": "^5.3.19",
@@ -41,5 +50,16 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  }
+  },
+  "files": [
+    "dist"
+  ],
+  "description": "Personal component library",
+  "bugs": {
+    "url": "https://github.com/sneyed/zenith/issues"
+  },
+  "homepage": "https://github.com/sneyed/zenith#readme",
+  "keywords": [
+    "react"
+  ]
 }
