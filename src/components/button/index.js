@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import { classNames } from "../util";
 
 const Button = ({
@@ -16,7 +16,7 @@ const Button = ({
       className={classNames([
         styles.button,
         styles[type],
-        selected && styles[`${type}-selected`],
+        selected && styles["selected"],
       ])}
       onClick={onClick}
       onBlur={onBlur}

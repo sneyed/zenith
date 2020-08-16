@@ -37,6 +37,7 @@
     "goober": "^2.0.5",
     "husky": "^4.2.5",
     "microbundle": "^0.12.3",
+    "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "react": "^16.13.1",

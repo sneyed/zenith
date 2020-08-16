@@ -7,7 +7,7 @@ import { Avatar, Button, Dropdown } from "@sneyed/zenith";
 
 Example of a navigation bar using Zenith components
 
-<div style={{ marginBottom: 16 }}>
+<div style={{ height: 180 }}>
   <div
     style={{
       boxSizing: "border-box",
@@ -53,6 +53,50 @@ Example of a navigation bar using Zenith components
   </div>
 </div>
 
-<code>
-  <pre>hi</pre>
-</code>
+## Code
+
+```
+<div
+  style={{
+    boxSizing: "border-box",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    background: "#252F3F",
+    color: "white",
+    paddingLeft: 36,
+    paddingRight: 36,
+    paddingTop: 16,
+    paddingBottom: 16,
+  }}
+>
+  <div>🔥 LOKIMCKAY.com</div>
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <nav style={{ display: "flex", alignItems: "center" }}>
+      <Button style={{ marginRight: 6 }} type="tab" label="Blog" selected />
+      <Button
+        style={{ marginLeft: 6, marginRight: 24, color: "white" }}
+        type="tab"
+        label="Contact"
+      />
+    </nav>
+    <Dropdown
+      align="right"
+      width={150}
+      button={
+        <Avatar
+          name="Loki McKay"
+          src="https://i.imgur.com/niM85vH.png"
+          size={38}
+        />
+      }
+      items={[
+        { label: "Profile", url: "#profile" },
+        { label: "Settings", url: "#settings" },
+        { label: "Sign out", url: "#signout" },
+      ]}
+    />
+  </div>
+</div>
+```

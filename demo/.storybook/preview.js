@@ -22,7 +22,6 @@ export const parameters = {
   },
   options: {
     storySort: (a, b) => {
-      console.log("a", a, "b", b);
       const prefixFn = pipe(
         prefix("welcome-", "0"),
         prefix("components-", "1"),
