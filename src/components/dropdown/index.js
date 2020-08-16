@@ -5,7 +5,14 @@ import { warn } from "../log";
 import { classNames } from "../util";
 import styles from "./styles.module.css";
 
-const Dropdown = ({ label = "Dropdown", button, children, align, items }) => {
+const Dropdown = ({
+  label = "Dropdown",
+  button,
+  children,
+  align,
+  items,
+  width = 200,
+}) => {
   if (items && children)
     warn({
       component: "Dropdown",
@@ -49,6 +56,7 @@ const Dropdown = ({ label = "Dropdown", button, children, align, items }) => {
             styles.items,
             align && styles[`align-${align}`],
           ])}
+          style={{ width }}
         >
           {items
             ? items.map((itemProps, index) => (

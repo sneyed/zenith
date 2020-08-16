@@ -1,0 +1,41 @@
+import { Button } from "@sneyed/zenith";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+
+<Meta title="Components/Button" component={Button} />
+
+# Button
+
+Click it and stuff happens
+
+<Canvas>
+  <Story name="Default">
+    <Button />
+  </Story>
+</Canvas>
+
+| Property | Type           | Required | Description                    | Default     |
+| -------- | -------------- | -------- | ------------------------------ | ----------- |
+| label    | string         | no       | Text to display on button face | "Button"    |
+| url      | string         | no       | Link to navigate to on click   | `undefined` |
+| type     | "hero" / "tab" | no       | Different appearances          | "hero"      |
+
+## Examples
+
+### Types
+
+#### Hero
+
+<Story name="Hero">
+  <div>
+    <Button type="hero" label="Hero" />
+  </div>
+</Story>
+
+#### Tab
+
+<Story name="Tab">
+  <div>
+    <Button type="tab" label="Tab" />
+    <Button type="tab" label="Selected" selected />
+  </div>
+</Story>

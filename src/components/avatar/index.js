@@ -8,6 +8,8 @@ const Avatar = ({
   shape = "circle",
 }) => {
   const style = {
+    verticalAlign: "middle",
+    display: "inline-block",
     borderRadius: shape === "circle" ? "50%" : 0,
     width: size,
     height: size,

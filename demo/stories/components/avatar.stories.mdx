@@ -1,5 +1,5 @@
 import { Avatar, Dropdown } from "@sneyed/zenith";
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 
 <Meta title="Components/Avatar" component={Avatar} />
 
@@ -8,11 +8,11 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 Circular image that represents a user  
 Commonly used on the right side of header navigation leading to account or profile settings
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Avatar name="Loki McKay" />
   </Story>
-</Preview>
+</Canvas>
 
 | Property | Type                 | Required | Description                              | Default                           |
 | -------- | -------------------- | -------- | ---------------------------------------- | --------------------------------- |
@@ -26,7 +26,7 @@ Commonly used on the right side of header navigation leading to account or profi
 
 ### Size
 
-<Preview>
+<Canvas>
   <Story name="Size">
     <div
       style={{
@@ -67,11 +67,11 @@ Commonly used on the right side of header navigation leading to account or profi
       />
     </div>
   </Story>
-</Preview>
+</Canvas>
 
 ### Shape
 
-<Preview>
+<Canvas>
   <Story name="Shape">
     <div
       style={{ display: "flex", width: "100%", justifyContent: "space-around" }}
@@ -88,11 +88,11 @@ Commonly used on the right side of header navigation leading to account or profi
       />
     </div>
   </Story>
-</Preview>
+</Canvas>
 
 ### With link
 
-<Preview>
+<Canvas>
   <Story name="With Link">
     <Avatar
       name="Loki McKay"
@@ -100,11 +100,11 @@ Commonly used on the right side of header navigation leading to account or profi
       url="#account"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### With right aligned dropdown
 
-<Preview>
+<Canvas>
   <Story name="Right Aligned Dropdown">
     <div style={{ paddingBottom: 84 }}>
       <Dropdown
@@ -120,4 +120,4 @@ Commonly used on the right side of header navigation leading to account or profi
       />
     </div>
   </Story>
-</Preview>
+</Canvas>
