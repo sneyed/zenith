@@ -1,13 +1,16 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { Avatar, Button, Dropdown } from "@sneyed/zenith";
+import CodeSwitch from "../../components/codeSwitch";
 
 <Meta title="Demos/Header" />
 
-# Navigation bar
+# Header
 
-Example of a navigation bar using Zenith components
+Examples of a page header using Zenith components
 
-<div style={{ height: 180 }}>
+## Light
+
+<Story name="Light">
   <div
     style={{
       boxSizing: "border-box",
@@ -15,20 +18,25 @@ Example of a navigation bar using Zenith components
       justifyContent: "space-between",
       alignItems: "center",
       width: "100%",
-      background: "#252F3F",
-      color: "white",
+      background: "#EBF8FF",
       paddingLeft: 36,
       paddingRight: 36,
       paddingTop: 16,
       paddingBottom: 16,
+      borderRadius: 4,
     }}
   >
-    <div style={{ cursor: "pointer" }}>🔥 LOKIMCKAY.com</div>
+    <div style={{ cursor: "pointer" }}>☀️ LOKIMCKAY.com</div>
     <div style={{ display: "flex", alignItems: "center" }}>
       <nav style={{ display: "flex", alignItems: "center" }}>
-        <Button style={{ marginRight: 6 }} type="nav" label="Blog" selected />
+        <Button style={{ marginRight: 6 }} type="nav" label="About" selected />
         <Button
-          style={{ marginLeft: 6, marginRight: 24, color: "white" }}
+          style={{ marginLeft: 6, marginRight: 6 }}
+          type="nav"
+          label="Blog"
+        />
+        <Button
+          style={{ marginLeft: 6, marginRight: 24 }}
           type="nav"
           label="Contact"
         />
@@ -51,11 +59,76 @@ Example of a navigation bar using Zenith components
       />
     </div>
   </div>
-</div>
+</Story>
+
+## Dark
+
+<Story name="Dark">
+  <div
+    style={{
+      boxSizing: "border-box",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "100%",
+      background: "#252F3F",
+      paddingLeft: 36,
+      paddingRight: 36,
+      paddingTop: 16,
+      paddingBottom: 16,
+      borderRadius: 4,
+    }}
+  >
+    <div style={{ cursor: "pointer", color: "white" }}>🌘 LOKIMCKAY.com</div>
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <nav style={{ display: "flex", alignItems: "center" }}>
+        <Button
+          style={{ marginRight: 6 }}
+          type="nav"
+          label="About"
+          dark
+          selected
+        />
+        <Button
+          style={{ marginLeft: 6, marginRight: 6 }}
+          type="nav"
+          label="Blog"
+          dark
+        />
+        <Button
+          style={{ marginLeft: 6, marginRight: 24 }}
+          type="nav"
+          label="Contact"
+          dark
+        />
+      </nav>
+      <Dropdown
+        align="right"
+        width={150}
+        button={
+          <Avatar
+            name="Loki McKay"
+            src="https://i.imgur.com/niM85vH.png"
+            size={38}
+          />
+        }
+        items={[
+          { label: "Profile", url: "#profile" },
+          { label: "Settings", url: "#settings" },
+          { label: "Sign out", url: "#signout" },
+        ]}
+      />
+    </div>
+  </div>
+</Story>
 
 ## Code
 
-```
+<CodeSwitch
+  snippets={[
+    {
+      name: "☀️ Light",
+      code: `// LightHeader.js
 <div
   style={{
     boxSizing: "border-box",
@@ -63,20 +136,25 @@ Example of a navigation bar using Zenith components
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    background: "#252F3F",
-    color: "white",
+    background: "#EBF8FF",
     paddingLeft: 36,
     paddingRight: 36,
     paddingTop: 16,
     paddingBottom: 16,
+    borderRadius: 4,
   }}
 >
-  <div style={{ cursor: "pointer" }}>🔥 LOKIMCKAY.com</div>
+  <div style={{ cursor: "pointer" }}>☀️ LOKIMCKAY.com</div>
   <div style={{ display: "flex", alignItems: "center" }}>
     <nav style={{ display: "flex", alignItems: "center" }}>
-      <Button style={{ marginRight: 6 }} type="nav" label="Blog" selected />
+      <Button style={{ marginRight: 6 }} type="nav" label="About" selected />
       <Button
-        style={{ marginLeft: 6, marginRight: 24, color: "white" }}
+        style={{ marginLeft: 6, marginRight: 6 }}
+        type="nav"
+        label="Blog"
+      />
+      <Button
+        style={{ marginLeft: 6, marginRight: 24 }}
         type="nav"
         label="Contact"
       />
@@ -98,5 +176,67 @@ Example of a navigation bar using Zenith components
       ]}
     />
   </div>
-</div>
-```
+</div>`,
+    },
+    {
+      name: "🌘 Dark",
+      code: `// DarkHeader.js
+<div
+  style={{
+    boxSizing: "border-box",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    background: "#252F3F",
+    paddingLeft: 36,
+    paddingRight: 36,
+    paddingTop: 16,
+    paddingBottom: 16,
+    borderRadius: 4,
+  }}
+>
+  <div style={{ cursor: "pointer", color: "white" }}>🌘 LOKIMCKAY.com</div>
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <nav style={{ display: "flex", alignItems: "center" }}>
+      <Button
+        style={{ marginRight: 6 }}
+        type="nav"
+        label="About"
+        dark
+        selected
+      />
+      <Button
+        style={{ marginLeft: 6, marginRight: 6 }}
+        type="nav"
+        label="Blog"
+        dark
+      />
+      <Button
+        style={{ marginLeft: 6, marginRight: 24 }}
+        type="nav"
+        label="Contact"
+        dark
+      />
+    </nav>
+    <Dropdown
+      align="right"
+      width={150}
+      button={
+        <Avatar
+          name="Loki McKay"
+          src="https://i.imgur.com/niM85vH.png"
+          size={38}
+        />
+      }
+      items={[
+        { label: "Profile", url: "#profile" },
+        { label: "Settings", url: "#settings" },
+        { label: "Sign out", url: "#signout" },
+      ]}
+    />
+  </div>
+</div>`,
+    },
+  ]}
+/>

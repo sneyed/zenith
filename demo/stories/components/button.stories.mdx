@@ -19,11 +19,9 @@ Click it and stuff happens
 | url      | string         | no       | Link to navigate to on click   | `undefined` |
 | type     | "hero" / "tab" | no       | Different appearances          | "hero"      |
 
-## Examples
+## Types
 
-### Types
-
-#### Hero
+### Hero
 
 <Story name="Hero">
   <div>
@@ -31,11 +29,32 @@ Click it and stuff happens
   </div>
 </Story>
 
-#### Tab
+### Nav
 
-<Story name="Tab">
-  <div>
-    <Button type="tab" label="Tab" />
-    <Button type="tab" label="Selected" selected />
-  </div>
+<Story name="Nav">
+  <>
+    <div style={{ width: "100%", borderRadius: 4, padding: 16 }}>
+      <Button type="nav" label="About" style={{ marginRight: 6 }} />
+      <Button type="nav" label="Contact" style={{ marginRight: 6 }} />
+      <Button type="nav" label="Selected" selected style={{ marginRight: 6 }} />
+    </div>
+    <div
+      style={{
+        width: "100%",
+        borderRadius: 4,
+        padding: 16,
+        backgroundColor: "black",
+      }}
+    >
+      <Button type="nav" label="About" dark style={{ marginRight: 6 }} />
+      <Button type="nav" label="Contact" dark style={{ marginRight: 6 }} />
+      <Button
+        type="nav"
+        label="Selected"
+        dark
+        selected
+        style={{ marginRight: 6 }}
+      />
+    </div>
+  </>
 </Story>

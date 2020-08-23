@@ -6,6 +6,7 @@ export default ({ children }) => {
     justifyContent: "center",
     alignItems: "center",
     padding: 32,
+    flexWrap: "wrap",
   };
   return <div style={style}>{children}</div>;
 };

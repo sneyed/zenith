@@ -9,6 +9,7 @@ const Button = ({
   onClick,
   onBlur,
   selected,
+  dark,
   style,
 }) => {
   const buttonElement = (
@@ -17,6 +18,7 @@ const Button = ({
         styles.button,
         styles[type],
         selected && styles["selected"],
+        dark && styles["dark"],
       ])}
       onClick={onClick}
       onBlur={onBlur}
