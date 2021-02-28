@@ -25,7 +25,7 @@
     "bundle": "microbundle --no-compress --format modern,cjs --jsx React.createElement",
     "bundlew": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement",
     "pretty": "prettier --write **/*.js",
-    "prepublish": "rm -rf ./dist && yarn run bundle",
+    "prepublish": "rm -rf ./dist && npm run bundle",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
