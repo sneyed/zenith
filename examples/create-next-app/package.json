@@ -10,7 +10,7 @@
   "dependencies": {
     "@sneyed/zenith": "file:../..",
     "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "react": "file:../../node_modules/react",
+    "react-dom": "file:../../node_modules/react-dom"
   }
 }

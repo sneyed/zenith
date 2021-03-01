@@ -11,8 +11,8 @@
     "dist"
   ],
   "scripts": {
-    "bundle": "microbundle --format modern,cjs,esm --jsx React.createElement",
-    "bundlew": "microbundle watch --format modern,cjs,esm --jsx React.createElement",
+    "bundle": "microbundle --format modern,cjs --jsx React.createElement ",
+    "bundlew": "microbundle watch --format modern,cjs --jsx React.createElement ",
     "prepublishOnly": "node src/lib/nopublish",
     "deploy": "rm -rf ./dist && npm run bundle && np"
   },
