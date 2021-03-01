@@ -1,5 +1,5 @@
 import React from "react";
-import { classNames } from "../util";
+import { cssJoin } from "../../lib/util";
 import styles from "./avatar.module.scss";
 
 export default function Avatar({
@@ -12,7 +12,7 @@ export default function Avatar({
 }) {
   const imgElement = (
     <img
-      className={classNames([styles.avatar, className])}
+      className={cssJoin([styles.avatar, className])}
       src={src}
       alt={name}
       role={name ? "img" : "none"}

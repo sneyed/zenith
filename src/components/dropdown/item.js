@@ -1,6 +1,6 @@
 import React from "react";
-import { warn } from "../log";
-import { classNames } from "../util";
+import { warn } from "../../lib/log";
+import { cssJoin } from "../../lib/util";
 import styles from "./dropdown.module.scss";
 
 const DropdownItem = ({ label, url, children }) => {
@@ -13,7 +13,7 @@ const DropdownItem = ({ label, url, children }) => {
   return url ? (
     <a
       href={url}
-      className={classNames([styles.item, styles.itemLink])}
+      className={cssJoin([styles.item, styles.itemLink])}
       role="menuitem"
     >
       {label || children || "Item"}

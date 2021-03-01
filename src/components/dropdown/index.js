@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Button from "../button";
 import DropdownItem from "./item";
-import { warn } from "../log";
-import { classNames } from "../util";
+import { warn } from "../../lib/log";
+import { cssJoin } from "../../lib/util";
 import styles from "./dropdown.module.scss";
 
 const Dropdown = ({
@@ -52,10 +52,7 @@ const Dropdown = ({
 
       {expanded && (
         <div
-          className={classNames([
-            styles.items,
-            align && styles[`align-${align}`],
-          ])}
+          className={cssJoin([styles.items, align && styles[`align-${align}`]])}
           style={{ width }}
         >
           {items
