@@ -1,0 +1,22 @@
+{
+  "name": "@sneyed/zenith-storybook",
+  "version": "0.0.0",
+  "description": "Storybook files and dependencies for @sneyed/zenith",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "npm run storybook",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@sneyed/zenith": "file:..",
+    "@storybook/addon-actions": "^6.1.20",
+    "@storybook/addon-essentials": "^6.1.20",
+    "@storybook/addon-links": "^6.1.20",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.1.20",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "css-loader": "^5.1.0"
+  }
+}

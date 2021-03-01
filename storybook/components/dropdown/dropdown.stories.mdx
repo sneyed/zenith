@@ -1,0 +1,13 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Dropdown } from "@sneyed/zenith";
+import styles from "./dropdown.stories.module.scss";
+
+<Meta title="Components/Dropdown" component={Dropdown} />
+
+# Dropdown
+
+Dropdown
+
+<Story name="Overview" args={{}}>
+  {args => <Dropdown label="Dropdown" items={[{ label: "hello" }]} {...args} />}
+</Story>

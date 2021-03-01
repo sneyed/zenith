@@ -1,7 +1,7 @@
 import React from "react";
 import { warn } from "../log";
 import { classNames } from "../util";
-import styles from "./styles.module.css";
+import styles from "./dropdown.module.scss";
 
 const DropdownItem = ({ label, url, children }) => {
   if (label && children)

@@ -1,8 +1,9 @@
-import React from "react";
-import styles from "./button.module.scss";
+import React, { useContext } from "react";
+import ThemeContext from "../../theme";
 import { classNames } from "../util";
+import styles from "./button.module.scss";
 
-const Button = ({
+export default function Button({
   label = "Button",
   url,
   type = "hero",
@@ -10,11 +11,12 @@ const Button = ({
   onBlur,
   selected,
   dark,
-  style,
-}) => {
+}) {
+  const theme = useContext(ThemeContext);
   const buttonElement = (
     <button
       className={classNames([
+        styles.zenith,
         styles.button,
         styles[type],
         selected && styles.selected,
@@ -22,12 +24,11 @@ const Button = ({
       ])}
       onClick={onClick}
       onBlur={onBlur}
-      style={style}
+      style={{ "--theme": "dark" }}
     >
       {label}
     </button>
   );
+  return JSON.stringify({ theme }, null, 2);
   return url ? <a href={url}>{buttonElement}</a> : buttonElement;
-};
-
-export default Button;
+}

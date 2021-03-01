@@ -1,0 +1,21 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Docs/Customize" />
+
+# Customize
+
+## Customize a single component
+
+Attach CSS classes to any given component via the `className` property.
+
+```jsx
+// MyComponent.js
+import { Button } from "@sneyed/zenith";
+import styles from "./myStyles.module.scss";
+
+<Button className={styles.myClass} />;
+```
+
+## Customize colours / variables across all components
+
+Edit .scss

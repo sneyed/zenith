@@ -1,34 +1,20 @@
 {
   "name": "@sneyed/zenith",
+  "description": "Personal component library",
   "version": "0.0.2-0",
   "author": "sneyed <sneyed@gmail.com>",
   "license": "UNLICENSED",
-  "description": "Personal component library",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
   "files": [
     "dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sneyed/zenith.git"
-  },
-  "bugs": {
-    "url": "https://github.com/sneyed/zenith/issues"
-  },
-  "homepage": "https://github.com/sneyed/zenith#readme",
-  "keywords": [
-    "react"
-  ],
   "scripts": {
-    "bundle": "microbundle --no-compress --format modern,cjs --jsx React.createElement",
-    "bundlew": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement",
-    "pretty": "prettier --write **/*.js",
-    "prepare": "node src/lib/nopublish",
-    "deploy": "rm -rf ./dist && npm run bundle && np",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "bundle": "microbundle --format modern,cjs,esm --jsx React.createElement",
+    "bundlew": "microbundle watch --format modern,cjs,esm --jsx React.createElement",
+    "prepublishOnly": "node src/lib/nopublish",
+    "deploy": "rm -rf ./dist && npm run bundle && np"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -38,10 +24,6 @@
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@babel/plugin-transform-react-jsx": "^7.10.4",
-    "@storybook/addon-actions": "^6.1.20",
-    "@storybook/addon-essentials": "^6.1.20",
-    "@storybook/addon-links": "^6.1.20",
-    "@storybook/react": "^6.1.20",
     "babel-loader": "^8.2.2",
     "core-js": "^3.6.5",
     "husky": "^4.2.5",
@@ -53,6 +35,17 @@
     "react-dom": "^16.13.1",
     "sass": "^1.32.8"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sneyed/zenith.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sneyed/zenith/issues"
+  },
+  "homepage": "https://github.com/sneyed/zenith#readme",
+  "keywords": [
+    "react"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"

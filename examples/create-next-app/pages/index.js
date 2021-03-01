@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Button } from "@sneyed/zenith";
+import { Avatar, Button } from "@sneyed/zenith";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -16,6 +16,7 @@ export default function Home() {
         </h1>
 
         <Button />
+        <Avatar />
 
         <p className={styles.description}>
           Get started by editing{" "}

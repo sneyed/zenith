@@ -1,0 +1,13 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Button } from "@sneyed/zenith";
+import styles from "./button.stories.module.scss";
+
+<Meta title="Components/Button" component={Button} />
+
+# Button
+
+When you click it, stuff happens
+
+<Story name="Overview" args={{}}>
+  {args => <Button label="Button" {...args} />}
+</Story>

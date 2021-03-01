@@ -1,26 +1,24 @@
 import React from "react";
+import { classNames } from "../util";
+import styles from "./avatar.module.scss";
 
-const Avatar = ({
+export default function Avatar({
   name,
   url,
   src = "https://i.imgur.com/niM85vH.png",
-  size = 64,
+  size = "64px",
   shape = "circle",
-}) => {
-  const style = {
-    verticalAlign: "middle",
-    display: "inline-block",
-    borderRadius: shape === "circle" ? "50%" : 0,
-    width: size,
-    height: size,
-    userSelect: "none",
-  };
-
+  className,
+}) {
   const imgElement = (
-    <img style={style} src={src} alt={name} role={name ? "img" : "none"} />
+    <img
+      className={classNames([styles.avatar, className])}
+      src={src}
+      alt={name}
+      role={name ? "img" : "none"}
+      style={{ "--shape": shape === "circle" ? "50%" : 0, "--size": size }}
+    />
   );
 
   return url ? <a href={url}>{imgElement}</a> : imgElement;
-};
-
-export default Avatar;
+}

@@ -1,5 +1,5 @@
-import "../styles/globals.css";
 import "@sneyed/zenith/dist/index.css";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

@@ -3,7 +3,7 @@ import Button from "../button";
 import DropdownItem from "./item";
 import { warn } from "../log";
 import { classNames } from "../util";
-import styles from "./styles.module.css";
+import styles from "./dropdown.module.scss";
 
 const Dropdown = ({
   label = "Dropdown",
