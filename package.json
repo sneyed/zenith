@@ -5,7 +5,9 @@
   "type": "module",
   "author": "sneyed <sneyed@gmail.com>",
   "license": "UNLICENSED",
-  "main": "dist/zenith.js",
+  "main": "./dist/zenith.js",
+  "module": "./dist/zenith.modern.js",
+  "source": "./src/index.js",
   "exports": {
     "./": "./dist/"
   },
