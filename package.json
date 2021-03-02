@@ -12,9 +12,11 @@
   ],
   "scripts": {
     "dev": "microbundle watch --format modern,cjs --jsx React.createElement",
-    "build": "microbundle --format modern,cjs --jsx React.createElement",
+    "bundle": "microbundle --format modern,cjs --jsx React.createElement",
+    "build": "npm run bundle && node src/lib/postbuild",
     "prepublishOnly": "node src/lib/nopublish",
-    "deploy": "rimraf ./dist && npm run build && cross-env ZENITH_DEPLOY=true np"
+    "deploy": "rimraf ./dist && npm run build && npm run release --prefix dist",
+    "release": "cross-env ZENITH_DEPLOY=true np"
   },
   "dependencies": {},
   "peerDependencies": {
