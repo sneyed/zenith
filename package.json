@@ -11,7 +11,7 @@
     "dist"
   ],
   "exports": {
-    "zenith.css": "./dist/zenith.css"
+    "./zenith.css": "./dist/zenith.css"
   },
   "scripts": {
     "dev": "microbundle watch --format modern,cjs --jsx React.createElement",
