@@ -14,7 +14,7 @@
     "dev": "microbundle watch --format modern,cjs --jsx React.createElement",
     "build": "microbundle --format modern,cjs --jsx React.createElement",
     "prepublishOnly": "node src/lib/nopublish",
-    "deploy": "rimraf ./dist && npm run build && np"
+    "deploy": "cross-env ZENITH_DEPLOY=true rimraf ./dist && npm run build && np"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.12.17",
+    "cross-env": "^7.0.3",
     "husky": "^4.2.5",
     "microbundle": "^0.12.4",
     "np": "^7.4.0",
