@@ -1,4 +1,4 @@
-import "@sneyed/zenith/css";
+import "@sneyed/zenith/zenith.css";
 import "../styles/globals.css";
 import { ThemeProvider } from "@sneyed/zenith";
 import theme from "../styles/theme.module.css";
