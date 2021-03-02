@@ -1,7 +1,7 @@
 {
   "name": "@sneyed/zenith",
   "description": "Personal component library",
-  "version": "0.0.3-1",
+  "version": "0.0.3-2",
   "type": "module",
   "author": "sneyed <sneyed@gmail.com>",
   "license": "UNLICENSED",
@@ -19,7 +19,6 @@
     "deploy": "rimraf ./dist && npm run build && node ./src/lib/ci/preDeploy && cross-env ZENITH_DEPLOY=true np && node ./src/lib/ci/postDeploy",
     "test": "echo \"No tests configured\""
   },
-  "dependencies": {},
   "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
