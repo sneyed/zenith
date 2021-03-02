@@ -32,6 +32,7 @@ function copyPackageJson() {
   const source = fs.readFileSync(packageJsonPath).toString("utf-8");
   const sourceObj = JSON.parse(source);
   deleteEntries(["files", "source", "devDependencies"], sourceObj);
+  deleteEntries(["prepublishOnly"], sourceObj.scripts);
   sliceDist(["main", "module"], sourceObj);
 
   const sourceString = JSON.stringify(sourceObj, null, 2);
