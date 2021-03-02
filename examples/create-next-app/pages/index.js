@@ -11,12 +11,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <div>
+          <Avatar className={styles.avatar} />
+          <Button />
+        </div>
+
         <h1 className={styles.title}>
           Welcome to <a href="https://github.com/sneyed/zenith">Zenith!</a>
         </h1>
-
-        <Button />
-        <Avatar />
 
         <p className={styles.description}>
           Get started by editing{" "}
