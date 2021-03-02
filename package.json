@@ -9,13 +9,14 @@
   "module": "./dist/zenith.modern.js",
   "source": "./src/index.js",
   "files": [
-    "dist"
+    "dist",
+    "zenith.css"
   ],
   "scripts": {
     "dev": "microbundle watch --format modern,cjs --jsx React.createElement",
     "build": "microbundle --format modern,cjs --jsx React.createElement",
-    "prepublishOnly": "node src/lib/nopublish",
-    "deploy": "rimraf ./dist && npm run build && node ./src/lib/predeploy && cross-env ZENITH_DEPLOY=true np && node ./src/lib/postdeploy"
+    "prepublishOnly": "node src/lib/ci/noPublish",
+    "deploy": "rimraf ./dist && npm run build && node ./src/lib/ci/preDeploy && cross-env ZENITH_DEPLOY=true np && node ./src/lib/ci/postDeploy"
   },
   "dependencies": {},
   "peerDependencies": {

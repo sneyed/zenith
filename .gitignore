@@ -20,3 +20,4 @@ yarn-error.log*
 
 # packs
 sneyed-zenith*.tgz
+/zenith.css
