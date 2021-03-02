@@ -1,7 +1,7 @@
 {
   "name": "@sneyed/zenith",
   "description": "Personal component library",
-  "version": "0.0.2-0",
+  "version": "0.0.2-1",
   "author": "sneyed <sneyed@gmail.com>",
   "license": "UNLICENSED",
   "main": "dist/zenith.js",
