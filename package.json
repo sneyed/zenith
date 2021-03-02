@@ -16,7 +16,8 @@
     "dev": "microbundle watch --format modern,cjs --jsx React.createElement",
     "build": "microbundle --format modern,cjs --jsx React.createElement",
     "prepublishOnly": "node src/lib/ci/noPublish",
-    "deploy": "rimraf ./dist && npm run build && node ./src/lib/ci/preDeploy && cross-env ZENITH_DEPLOY=true np && node ./src/lib/ci/postDeploy"
+    "deploy": "rimraf ./dist && npm run build && node ./src/lib/ci/preDeploy && cross-env ZENITH_DEPLOY=true np && node ./src/lib/ci/postDeploy",
+    "test": "echo \"No tests configured\""
   },
   "dependencies": {},
   "peerDependencies": {
