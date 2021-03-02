@@ -15,8 +15,7 @@
   },
   "scripts": {
     "dev": "microbundle watch --format modern,cjs --jsx React.createElement",
-    "bundle": "microbundle --format modern,cjs --jsx React.createElement",
-    "build": "npm run bundle && node src/lib/postbuild",
+    "build": "microbundle --format modern,cjs --jsx React.createElement",
     "prepublishOnly": "node src/lib/nopublish",
     "deploy": "rimraf ./dist && npm run build && cross-env ZENITH_DEPLOY=true np"
   },
