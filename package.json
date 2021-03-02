@@ -8,9 +8,11 @@
   "main": "./dist/zenith.js",
   "module": "./dist/zenith.modern.js",
   "source": "./src/index.js",
+  "files": [
+    "dist"
+  ],
   "exports": {
-    "./": "./dist/",
-    "./package.json": "./package.json"
+    "./": "./dist/"
   },
   "scripts": {
     "dev": "microbundle watch --format modern,cjs --jsx React.createElement",
