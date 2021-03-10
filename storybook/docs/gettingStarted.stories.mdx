@@ -1,0 +1,35 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Docs/Getting Started" />
+
+# Getting started
+
+1. Add Zenith as a dependency
+
+```
+npm install @sneyed/zenith
+```
+
+2. Add Zenith's CSS to your project
+
+```jsx
+// src/index.js
+import "@sneyed/zenith/zenith.css";
+
+ReactDOM.render(
+    ...
+);
+```
+
+3. Start using Zenith components! 🚀
+
+```jsx
+// src/components/MyHeader.js
+import { Button } from "@sneyed/zenith";
+
+export default function MyHeader() {
+  return <Button label="Hello" />;
+}
+```
+
+💡 **Tip:** If you are stuck, try using one of the [examples](https://github.com/sneyed/zenith/tree/master/examples) as a reference

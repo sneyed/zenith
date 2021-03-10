@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.12.17",
+    "core-js": "^3.9.1",
     "cross-env": "^7.0.3",
     "husky": "^4.2.5",
     "microbundle": "^0.12.4",

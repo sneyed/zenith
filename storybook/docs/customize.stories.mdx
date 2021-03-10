@@ -4,7 +4,12 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Customize
 
-## Customize a single component
+There are 2 ways to customize the appearance of Zenith components:
+
+- [Per component using the `className` property](#classname-property)
+- [Across multiple components using a theme](#theming)
+
+## `className` property
 
 Attach CSS classes to any given component via the `className` property.
 
@@ -16,6 +21,37 @@ import styles from "./myStyles.module.scss";
 <Button className={styles.myClass} />;
 ```
 
-## Customize colours / variables across all components
+## Theming
 
-Edit .scss
+Internal Zenith styles can be overriden using the `<ThemeProvider>` component
+
+In the example below, `.btn` must correspond to the class you are trying to override within the default `zenith.css` styles
+
+⚠️ **Important**  
+The theme css file _(`theme.module.css` in this example)_ must be imported _after_ the `zenith.css` file
+
+```css
+/* theme.module.css */
+.button {
+  background-color: blue;
+}
+
+.button:hover {
+  background-color: red;
+}
+```
+
+```jsx
+// index.js
+import { ThemeProvider } from "@sneyed/zenith";
+import "@sneyed/zenith/zenith.css";
+import theme from "./theme.module.css";
+
+ReactDOM.render(
+    ...
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
+    ...
+);
+```
