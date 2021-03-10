@@ -1,0 +1,6 @@
+.row {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 16px;
+  align-items: center;
+}

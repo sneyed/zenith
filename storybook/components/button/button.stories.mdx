@@ -1,13 +1,29 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 import { Button } from "@sneyed/zenith";
+import { getArgTypes } from "../../lib/util";
 import styles from "./button.stories.module.scss";
 
-<Meta title="Components/Button" component={Button} />
+export const argTypes = [
+  {
+    name: "label",
+    description: "Text to display on button face",
+  },
+  {
+    name: "type",
+    description: "Appearance of the button",
+  },
+];
+
+<Meta
+  title="Components/Button"
+  component={Button}
+  argTypes={getArgTypes(argTypes)}
+/>
 
 # Button
 
 When you click it, stuff happens
 
-<Story name="Overview" args={{}}>
-  {args => <Button label="Button" {...args} />}
-</Story>
+<Story name="Default">{args => <Button {...args} />}</Story>
+
+<ArgsTable story="Default" />

@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import Button from "../button";
-import DropdownItem from "./item";
+import DropdownItem, { IDropdownItem } from "./item";
 import { warn } from "../../lib/log";
 import { cssJoin } from "../../lib/util";
 import styles from "./dropdown.module.scss";
+
+interface IDropdown {
+  label?: string;
+  button?: any;
+  children?: any;
+  align?: string;
+  items?: any;
+  width?: number;
+}
 
 const Dropdown = ({
   label = "Dropdown",
@@ -12,7 +21,7 @@ const Dropdown = ({
   align,
   items,
   width = 200,
-}) => {
+}: IDropdown) => {
   if (items && children)
     warn({
       component: "Dropdown",
@@ -20,27 +29,27 @@ const Dropdown = ({
     });
 
   const [expanded, setExpanded] = useState(false);
-  const [blurTimeout, setBlurTimeout] = useState(null);
+  // const [blurTimeout, setBlurTimeout] = useState(null);
   const onClick = () => {
     setExpanded(!expanded);
   };
-  const onBlur = () => {
-    setBlurTimeout(
-      setTimeout(() => {
-        setExpanded(false);
-      })
-    );
-  };
-  const onFocus = () => {
-    clearTimeout(blurTimeout);
-  };
+  // const onBlur = () => {
+  //   setBlurTimeout(
+  //     setTimeout(() => {
+  //       setExpanded(false);
+  //     })
+  //   );
+  // };
+  // const onFocus = () => {
+  //   clearTimeout(blurTimeout);
+  // };
 
   return (
     <div
       aria-expanded={expanded}
       className={styles.container}
-      onBlur={onBlur}
-      onFocus={onFocus}
+      // onBlur={onBlur}
+      // onFocus={onFocus}
     >
       {button ? (
         <button className={styles.button} onClick={onClick}>
@@ -56,7 +65,7 @@ const Dropdown = ({
           style={{ width }}
         >
           {items
-            ? items.map((itemProps, index) => (
+            ? items.map((itemProps: IDropdownItem, index: number) => (
                 <DropdownItem key={index} {...itemProps} />
               ))
             : children}

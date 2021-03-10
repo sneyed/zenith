@@ -1,12 +1,36 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 import { Avatar } from "@sneyed/zenith";
+import { getArgTypes } from "../../lib/util";
 
-<Meta title="Components/Avatar" component={Avatar} />
+export const argTypes = [
+  {
+    name: "size",
+    description: "CSS width and height attribute",
+  },
+  {
+    name: "src",
+    description: "Image's url",
+  },
+  {
+    name: "shape",
+    description: "Circular or square appearance",
+    control: {
+      type: "select",
+      options: ["circle", "square"],
+    },
+  },
+];
+
+<Meta
+  title="Components/Avatar"
+  component={Avatar}
+  argTypes={getArgTypes(argTypes)}
+/>
 
 # Avatar
 
-Avatar
+Image element that typically represents a user
 
-<Story name="Overview" args={{}}>
-  {args => <Avatar {...args} />}
-</Story>
+<Story name="Default">{args => <Avatar {...args} />}</Story>
+
+<ArgsTable story="Default" />
