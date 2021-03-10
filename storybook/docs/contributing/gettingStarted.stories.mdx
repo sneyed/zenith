@@ -1,0 +1,50 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Docs/Contributing/Getting Started" />
+
+# Getting started
+
+## 1. Clone repository
+
+```
+git clone https://github.com/sneyed/zenith.git
+```
+
+## 2. Build component files to `/dist`
+
+1. Install dependencies
+
+```
+cd zenith
+npm install
+```
+
+2. Build to `/dist` and watch for changes
+
+```
+npm run dev
+```
+
+💡 **Tip:** _Use `npm run build` if you don't want to watch for changes_
+
+<br />
+
+## 3. View components
+
+You can view components using storybook or an example project
+
+### Storybook
+
+```
+cd zenith/storybook
+npm install
+npm start
+```
+
+### Example project
+
+```
+cd zenith/examples/<example>
+npm install
+npm run ... (check the package.json of the example for a start command)
+```

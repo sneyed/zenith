@@ -6,7 +6,7 @@ export const parameters = {
   docs: { theme },
   options: {
     storySort: {
-      order: ["Docs", ["Intro", "Getting Started"], "Components"],
+      order: ["Docs", ["Intro", "Getting Started", "Customize"], "Components"],
     },
   },
 };
