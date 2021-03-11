@@ -6,7 +6,7 @@ export default function Avatar({
   url,
   src = "https://i.imgur.com/niM85vH.png",
   size = "64px",
-  shape = "circle",
+  borderRadius = "50%",
   className,
 }) {
   const imgElement = (
@@ -16,7 +16,7 @@ export default function Avatar({
       alt={name}
       role={name ? "img" : "none"}
       style={{
-        "--shape": shape === "circle" ? "50%" : 0,
+        "--borderRadius": borderRadius,
         "--size": size,
       }}
     />

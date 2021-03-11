@@ -2,30 +2,26 @@ import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 import Avatar from "@sneyed/zenith/src/components/avatar";
 import { getArgTypes } from "../../lib/util";
 
-export const argTypes = [
+export const properties = [
   {
     name: "name",
-    description: "accessibility identifier",
+    description: "Accessibility identifier",
   },
   {
     name: "url",
-    description: "url link when Avatar is clicked",
+    description: "Url to navigate to on click",
   },
   {
     name: "src",
-    description: "Image's url",
+    description: "`<img>` element's `src` attribute",
   },
   {
     name: "size",
-    description: "CSS width and height attribute",
+    description: "`width` and `height` CSS attributes",
   },
   {
-    name: "shape",
-    description: "Circular or square appearance",
-    control: {
-      type: "select",
-      options: ["circle", "square"],
-    },
+    name: "borderRadius",
+    description: "`border-radius` CSS attribute",
   },
   {
     name: "className",
@@ -36,7 +32,7 @@ export const argTypes = [
 <Meta
   title="Components/Avatar"
   component={Avatar}
-  argTypes={getArgTypes(argTypes)}
+  argTypes={getArgTypes(properties)}
 />
 
 # Avatar
@@ -44,5 +40,21 @@ export const argTypes = [
 Image element that typically represents a user
 
 <Story name="Default">{args => <Avatar {...args} />}</Story>
+
+```jsx
+import { Avatar } from "@sneyed/zenith";
+
+export default function MyComponent() {
+  return (
+    <Avatar
+      name="profile"
+      url="https://github.com/sneyed"
+      src="https://i.imgur.com/niM85vH.png"
+      size="64px"
+      borderRadius="50%"
+    />
+  );
+}
+```
 
 <ArgsTable story="Default" />

@@ -6,6 +6,7 @@ export const parameters = {
   docs: { theme },
   options: {
     storySort: {
+      method: "alphabetical",
       order: ["Docs", ["Intro", "Getting Started", "Customize"], "Components"],
     },
   },

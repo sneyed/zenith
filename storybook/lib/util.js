@@ -9,7 +9,7 @@ export const getArgTypes = arr => {
           summary: type || "string",
         },
       },
-      control: control || { type: "text" },
+      control: control !== undefined ? control : { type: type || "text" },
     };
   });
   return argTypes;

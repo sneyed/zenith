@@ -3,27 +3,58 @@ import { Button } from "@sneyed/zenith";
 import { getArgTypes } from "../../lib/util";
 import styles from "./button.stories.module.scss";
 
-export const argTypes = [
+export const properties = [
   {
     name: "label",
     description: "Text to display on button face",
   },
   {
+    name: "url",
+    description: "Url to navigate to on click",
+  },
+  {
     name: "type",
     description: "Appearance of the button",
+    control: {
+      type: "select",
+      options: ["hero", "nav"],
+    },
+  },
+  {
+    name: "onClick",
+    description: "Function to execute when clicked",
+    control: false,
+  },
+  {
+    name: "onBlur",
+    description: "Function to execute when focus lost",
+    control: false,
+  },
+  {
+    name: "selected",
+    type: "boolean",
+    description: "Selected",
   },
 ];
 
 <Meta
   title="Components/Button"
   component={Button}
-  argTypes={getArgTypes(argTypes)}
+  argTypes={getArgTypes(properties)}
 />
 
 # Button
 
-When you click it, stuff happens
+Click it, stuff happens
 
 <Story name="Default">{args => <Button {...args} />}</Story>
+
+```jsx
+import { Button } from "@sneyed/zenith";
+
+export default function MyComponent() {
+  return <Button label="Button" onClick={() => alert("clicked!")} />;
+}
+```
 
 <ArgsTable story="Default" />

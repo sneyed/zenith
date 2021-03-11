@@ -1,13 +1,67 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import { Dropdown } from "@sneyed/zenith";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Dropdown, DropdownItem } from "@sneyed/zenith";
+import { getArgTypes } from "../../lib/util";
 import styles from "./dropdown.stories.module.scss";
 
-<Meta title="Components/Dropdown" component={Dropdown} />
+export const properties = [
+  {
+    name: "label",
+    description: "Text to display on button face",
+  },
+  {
+    name: "button",
+    description: "Optionally override the element to display as button",
+    type: "JSX element",
+    control: false,
+  },
+  {
+    name: "align",
+    description: "How to position expanded entries in relation to button",
+    control: {
+      type: "select",
+      options: ["left", "right"],
+    },
+  },
+  {
+    name: "items",
+    description:
+      "Pass DropdownItem properties to display when clicked. Alternatively supply nested children",
+    control: { type: "object" },
+  },
+  {
+    name: "width",
+    description: "`width` CSS attribute of expanded dropdown entries",
+  },
+];
+
+<Meta
+  title="Components/Dropdown"
+  component={Dropdown}
+  argTypes={getArgTypes(properties)}
+/>
 
 # Dropdown
 
-Dropdown
+Click it, options are shown
 
-<Story name="Overview" args={{}}>
-  {args => <Dropdown label="Dropdown" items={[{ label: "hello" }]} {...args} />}
+<Story name="Default" args={{ items: [{ label: "hello" }] }}>
+  {args => <Dropdown {...args} />}
 </Story>
+
+```jsx
+import { Dropdown } from "@sneyed/zenith";
+
+export default function MyComponent() {
+  return (
+    <Dropdown
+      label="Numbers"
+      items={[
+        { label: "one", url: "#1" },
+        { label: "two", url: "#2" },
+      ]}
+    />
+  );
+}
+```
+
+<ArgsTable story="Default" />

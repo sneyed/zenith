@@ -1,7 +1,7 @@
 .avatar {
   vertical-align: middle;
   display: inline-block;
-  border-radius: var(--shape, 50%);
+  border-radius: var(--borderRadius, 50%);
   width: var(--size, 64px);
   height: var(--size, 64px);
   user-select: none;

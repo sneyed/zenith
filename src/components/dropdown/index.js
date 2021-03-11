@@ -9,9 +9,9 @@ const Dropdown = ({
   label = "Dropdown",
   button,
   children,
-  align,
+  align = "left",
   items,
-  width = 200,
+  width = "200px",
 }) => {
   if (items && children)
     warn({
