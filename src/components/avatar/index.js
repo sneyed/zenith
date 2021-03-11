@@ -1,3 +1,4 @@
+import React from "react";
 import { cssJoin } from "../../lib/util";
 import styles from "./avatar.module.scss";
 
