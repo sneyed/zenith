@@ -3,13 +3,7 @@ import { warn } from "../../lib/log";
 import { cssJoin } from "../../lib/util";
 import styles from "./dropdown.module.scss";
 
-export interface IDropdownItem {
-  label?: string;
-  url?: string;
-  children?: any;
-}
-
-const DropdownItem = ({ label, url, children }: IDropdownItem) => {
+const DropdownItem = ({ label, url, children }) => {
   if (label && children)
     warn({
       component: "DropdownItem",

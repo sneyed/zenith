@@ -8,8 +8,7 @@
   "main": "./dist/zenith.js",
   "module": "./dist/zenith.modern.js",
   "exports": "./dist/zenith.modern.js",
-  "types": "./dist/zenith.d.ts",
-  "source": "./src/index.tsx",
+  "source": "./src/index.js",
   "files": [
     "dist",
     "zenith.css"
