@@ -40,12 +40,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sneyed/zenith.git"
+    "url": "git+https://github.com/lokimckay/zenith.git"
   },
   "bugs": {
-    "url": "https://github.com/sneyed/zenith/issues"
+    "url": "https://github.com/lokimckay/zenith/issues"
   },
-  "homepage": "https://github.com/sneyed/zenith#readme",
+  "homepage": "https://github.com/lokimckay/zenith#readme",
   "keywords": [
     "react"
   ],

@@ -17,7 +17,7 @@ export default function Home() {
         </div>
 
         <h1 className={styles.title}>
-          Welcome to <a href="https://github.com/sneyed/zenith">Zenith!</a>
+          Welcome to <a href="https://github.com/lokimckay/zenith">Zenith!</a>
         </h1>
 
         <p className={styles.description}>

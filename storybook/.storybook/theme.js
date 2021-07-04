@@ -3,5 +3,5 @@ import { create } from "@storybook/theming";
 export default create({
   base: "dark",
   brandTitle: "Zenith",
-  brandUrl: "https://github.com/sneyed/zenith",
+  brandUrl: "https://github.com/lokimckay/zenith",
 });
